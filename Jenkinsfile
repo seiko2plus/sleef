@@ -4,6 +4,7 @@ node('x86') {
   sh '''
   set -ev
   echo "Building on" `hostname`
+  pwd
   export CC=gcc
   rm -rf build
   mkdir build
