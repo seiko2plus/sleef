@@ -18,11 +18,11 @@ stage('Build') {
     }
   }, 'icc': {
     node('icc') {
-      export PATH=$PATH:/opt/intel/compilers_and_libraries/linux/bin/intel64
-      export LD_LIBRARY_PATH=/opt/intel/compilers_and_libraries/linux/lib/intel64
       checkout scm
       sh '''
       set -ev
+      export PATH=$PATH:/opt/intel/compilers_and_libraries/linux/bin/intel64
+      export LD_LIBRARY_PATH=/opt/intel/compilers_and_libraries/linux/lib/intel64
       echo "Building with Intel Compiler on" `hostname`
       pwd
       export CC=icc
