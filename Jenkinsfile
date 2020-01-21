@@ -1,6 +1,7 @@
 stage "Build"
 
 node('x86') {
+  checkout scm
   sh '''
   set -ev
   echo "Building on" `hostname`
