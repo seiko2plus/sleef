@@ -13,7 +13,7 @@ node('x86') {
   cmake -DCMAKE_INSTALL_PREFIX=../install -DSLEEF_SHOW_CONFIG=1 -DENFORCE_TESTER3=TRUE -DBUILD_QUAD=TRUE ..
   make -j 4 all
   '''
-  stash name: "buildDir", includes: "/build/*"
+  stash name: "buildDir", includes: "**"
 }
 
 stage "Test"
